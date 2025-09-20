@@ -10,3 +10,4 @@ const count = () =>{for(i=0;i<words.length;i++){
 }
 }
 count(words);
+

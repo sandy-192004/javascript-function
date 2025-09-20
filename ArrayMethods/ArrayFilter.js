@@ -3,6 +3,7 @@ const numbers = prompt("enter a numbers: ");
 const array = numbers.split(" ");
 console.log(array);
 
-const greaterNumber = array.filter((
-))
+const greaterNumber = array.filter(greaterNumber => {
+    return(greaterNumber >= 10);
+})
 console.log(greaterNumber);

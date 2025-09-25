@@ -1,12 +1,15 @@
 const express = require("express");
 const api = express();
 const users = require("./userRoute");
-const dotenv = require("mongoose");
 const MongoDB = require("./UserDB");
+const authMiddleware = require("../middleware/Authentication.js");
+
+
 MongoDB();
 port = 3000;
 //middlewares
 api.use(express.json());
+app.use(authMiddleware); 
 
 api.use((req, res, next) => {
   const timestamp = new Date().toISOString();

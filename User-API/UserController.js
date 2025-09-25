@@ -1,4 +1,4 @@
-const User = require("./UserModels.js");  
+const User = require("./UserModels.js"); 
 
 // create new user
 const getNewUsers = async (req, res) => {
@@ -7,6 +7,8 @@ const getNewUsers = async (req, res) => {
       Name: req.body.Name,
       Age: req.body.Age,
       email: req.body.email,
+      role: req.body.role,
+      password: req.body.password
     });
 
     const savedUser = await newUser.save();
@@ -35,5 +37,7 @@ const getUserByName = async (req, res) => {
     return res.status(400).json({ msg: error.message });
   }
 };
+
+
 
 module.exports = { getAllUsers,getUserByName, getNewUsers };
